@@ -1,9 +1,15 @@
 #!/bin/bash
+if [ $# -ge 1 ]
+then
+	proj_name="$1"
+else
+	proj_name="gtk-test"
+fi
 
-fix_file="CMakeFiles/gtk-test.dir/flags.make"
+fix_file="CMakeFiles/${proj_name}.dir/flags.make"
 
 if [ ! -f "${fix_file}" ]
 then
 	echo "${fix_file} not found!"
 fi
-sed -iv 's/\/home\/liujinsong\/gtk-tutorials\/app1\/D:\/msys64//g' CMakeFiles/gtk-test.dir/flags.make
+sed -iv "s/\/home\/liujinsong\/gtk-tutorials\/${proj_name}\/D:\/msys64//g" "${fix_file}"
