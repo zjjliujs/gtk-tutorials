@@ -1,16 +1,11 @@
 #include <gtk/gtk.h>
 
-	static void
-print_hello (GtkWidget *widget,
-		gpointer   data)
-{
+static void print_hello (GtkWidget *widget,gpointer   data) {
 	g_print ("Hello World\n");
 }
 
-	int
-main (int   argc,
-		char *argv[])
-{
+int main (int   argc,	char *argv[]) {
+
 	GtkBuilder *builder;
 	GObject *window;
 	GObject *button;
@@ -20,8 +15,7 @@ main (int   argc,
 
 	/* Construct a GtkBuilder instance and load our UI description */
 	builder = gtk_builder_new ();
-	if (gtk_builder_add_from_file (builder, "builder.ui", &error) == 0)
-	{
+	if (gtk_builder_add_from_file (builder, "builder.ui", &error) == 0) {
 		g_printerr ("Error loading file: %s\n", error->message);
 		g_clear_error (&error);
 		return 1;
