@@ -21,8 +21,12 @@ target_link_libraries (app2 ${FC_DEP_LIBS})
 
 set(RES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
+pkg_get_variable(RES_COMPILER gio-2.0 glib_compile_resources)
+message(STATUS "RES_COMPILER: ${RES_COMPILER}") 
+
 add_custom_command(OUTPUT  ${RES_DIR}/${RES_FILE}
 	COMMAND echo "Generating ${RES_DIR}/${RES_FILE} file..."
-	COMMAND glib-compile-resources ${RES_DIR}/exampleapp.gresource.xml --target=${RES_DIR}/${RES_FILE} --sourcedir=${RES_DIR} --generate-source
+	#COMMAND glib-compile-resources ${RES_DIR}/exampleapp.gresource.xml --target=${RES_DIR}/${RES_FILE} --sourcedir=${RES_DIR} --generate-source
+	COMMAND ${RES_COMPILER} ${RES_DIR}/exampleapp.gresource.xml --target=${RES_DIR}/${RES_FILE} --sourcedir=${RES_DIR} --generate-source
 )
 add_custom_target(generateRes ALL DEPENDS ${RES_DIR}/${RES_FILE})
