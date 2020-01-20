@@ -12,4 +12,4 @@ if [ ! -f "${fix_file}" ]
 then
 	echo "${fix_file} not found!"
 fi
-sed -iv "s/\/home\/liujinsong\/gtk-tutorials\/${proj_name}\/D:\/msys64//g" "${fix_file}"
+sed -iv "s/\/home\/liujinsong\/gtk\/gtk-tutorials\/${proj_name}\/D:\/msys64//g" "${fix_file}"
