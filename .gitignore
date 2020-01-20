@@ -18,3 +18,4 @@ _CPack_Packages/
 *.jar
 **/.gradle/
 **/build/
+*.swp
