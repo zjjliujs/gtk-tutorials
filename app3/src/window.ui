@@ -15,13 +15,13 @@
             <child type="title">
               <object class="GtkStackSwitcher" id="tabs">
                 <property name="visible">True</property>
-                <property name="stack">stack</property>
+                <property name="stack">stack_id</property>
               </object>
             </child>
           </object>
         </child>
         <child>
-          <object class="GtkStack" id="stack">
+          <object class="GtkStack" id="stack_id">
             <property name="visible">True</property>
           </object>
         </child>
