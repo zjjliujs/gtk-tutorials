@@ -131,10 +131,9 @@ void shaderInit()
 	glDeleteShader(fragmentShader);
 }
 
-	gboolean
-render(GtkGLArea *area, gpointer user_data)
+gboolean render(GtkGLArea *area, gpointer user_data)
 {
-	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);/* clear the window*/
+	g_message("render entry!");
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	//绘制过程	
@@ -148,9 +147,9 @@ render(GtkGLArea *area, gpointer user_data)
 	return TRUE;
 }
 
-	void
-realize(GtkWidget *area, gpointer user_data)
+void realize(GtkWidget *area, gpointer user_data)
 {
+	g_message("realize entry!");
 	gtk_gl_area_make_current(GTK_GL_AREA(area));
 	if (gtk_gl_area_get_error(GTK_GL_AREA(area)) != NULL)
 		return;
@@ -165,6 +164,8 @@ realize(GtkWidget *area, gpointer user_data)
 	//VBO,VAO初始化		
 	vertexObjectInit();
 	shaderInit();
+
+	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);/* clear the window*/
 }
 
 gboolean windowinit()

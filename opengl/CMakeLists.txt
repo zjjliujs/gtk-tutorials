@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.10)
-project (gtk-test)
+project (opengl)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
@@ -23,5 +23,5 @@ link_directories(${GLEW_LIBRARY_DIRS})
 list(APPEND FC_DEP_LIBS ${GLEW_LIBRARIES})
 message(STATUS "FC_DEP_LIBS: ${FC_DEP_LIBS}")
 
-add_executable (gtk-test src/main.c)
-target_link_libraries (gtk-test ${FC_DEP_LIBS})
+add_executable (opengl src/main.c)
+target_link_libraries (opengl ${FC_DEP_LIBS})
