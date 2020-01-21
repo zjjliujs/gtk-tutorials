@@ -12,7 +12,7 @@ typedef struct _ExampleAppWindowPrivate ExampleAppWindowPrivate;
 
 struct _ExampleAppWindowPrivate
 {
-  GtkWidget *stack;
+  GtkWidget *stack_id;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE(ExampleAppWindow, example_app_window, GTK_TYPE_APPLICATION_WINDOW);
@@ -28,7 +28,7 @@ example_app_window_class_init (ExampleAppWindowClass *class)
 {
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (class),
                                                "/org/gtk/exampleapp/window.ui");
-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (class), ExampleAppWindow, stack);
+  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (class), ExampleAppWindow, stack_id);
 }
 
 ExampleAppWindow *
@@ -59,7 +59,7 @@ example_app_window_open (ExampleAppWindow *win,
   gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (view), FALSE);
   gtk_widget_show (view);
   gtk_container_add (GTK_CONTAINER (scrolled), view);
-  gtk_stack_add_titled (GTK_STACK (priv->stack), scrolled, basename, basename);
+  gtk_stack_add_titled (GTK_STACK (priv->stack_id), scrolled, basename, basename);
 
   if (g_file_load_contents (file, NULL, &contents, &length, NULL, NULL))
     {
