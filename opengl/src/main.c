@@ -134,7 +134,6 @@ void shaderInit()
 gboolean render(GtkGLArea *area, gpointer user_data)
 {
 	g_message("render entry!");
-	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);/* clear the window*/
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	//绘制过程	
@@ -165,6 +164,8 @@ void realize(GtkWidget *area, gpointer user_data)
 	//VBO,VAO初始化		
 	vertexObjectInit();
 	shaderInit();
+
+	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);/* clear the window*/
 }
 
 gboolean windowinit()
