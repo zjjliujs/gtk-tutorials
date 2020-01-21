@@ -26,11 +26,16 @@ int main(int argc, char *argv[])
 	gtk_window_set_default_size(GTK_WINDOW(window), 230, 150);
 	gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
 	//载入icon
-	icon = create_pixbuf("drawable/demo.png");
-	if (icon != NULL){
-		gtk_window_set_icon(GTK_WINDOW(window), icon);
-		//释放icon
-		g_object_unref(icon);
+	if (argc > 1) {
+		char * icon_file = argv[1];
+		icon = create_pixbuf(icon_file);
+		if (icon != NULL) {
+			gtk_window_set_icon(GTK_WINDOW(window), icon);
+			//释放icon
+			g_object_unref(icon);
+		}
+	} else {
+		g_message("No png file given");		
 	}
 	//显示window
 	gtk_widget_show(window);
