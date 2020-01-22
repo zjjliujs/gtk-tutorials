@@ -2,7 +2,7 @@
 <schemalist>
   <schema path="/org/gtk/exampleapp/" id="org.gtk.exampleapp">
     <key name="font" type="s">
-      <default>'Monospace 12'</default>
+      <default>'Monospace 18'</default>
       <summary>Font</summary>
       <description>The font to be used for content.</description>
     </key>
