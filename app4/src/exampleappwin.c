@@ -41,6 +41,7 @@ void
 example_app_window_open (ExampleAppWindow *win,
                          GFile            *file)
 {
+  g_message("example_app_window_open entry!");
   ExampleAppWindowPrivate *priv;
   gchar *basename;
   GtkWidget *scrolled, *view;

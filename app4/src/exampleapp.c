@@ -20,6 +20,7 @@ preferences_activated (GSimpleAction *action,
                        GVariant      *parameter,
                        gpointer       app)
 {
+	g_message("preferences_activated entry!");
 }
 
 static void
@@ -32,7 +33,7 @@ quit_activated (GSimpleAction *action,
 
 static GActionEntry app_entries[] =
 {
-  { "preferences", preferences_activated, NULL, NULL, NULL },
+  { "preferences1", preferences_activated, NULL, NULL, NULL },
   { "quit", quit_activated, NULL, NULL, NULL }
 };
 
